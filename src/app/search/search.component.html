@@ -1,0 +1,45 @@
+<ActionBar class="action-bar">
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label class="action-bar-title" text="Search"></Label>
+</ActionBar>
+
+<GridLayout class="page page-content">
+    <StackLayout class="form">
+        <StackLayout class="input-field">
+            <Label text="Name" class="label font-weight-bold m-b-5"></Label>
+            <TextField autocorrect="false" [(ngModel)]="employee.name" class="input" required></TextField>
+            <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <StackLayout class="input-field">
+            <Label text="Surname" class="label font-weight-bold m-b-5"></Label>
+            <TextField autocorrect="false" [(ngModel)]="employee.surname" class="input" required></TextField>
+            <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <StackLayout class="input-field">
+            <Label text="Age" class="label font-weight-bold m-b-5"></Label>
+            <TextField autocorrect="false" [(ngModel)]="employee.age" keyboardType="number" class="input" required></TextField>
+            <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <StackLayout class="input-field">
+            <Label text="Nationality" class="label font-weight-bold m-b-5"></Label>
+            <TextField autocorrect="false" [(ngModel)]="employee.nationality" class="input" required></TextField>
+            <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <StackLayout class="input-field">
+            <Label text="Phone number" class="label font-weight-bold m-b-5"></Label>
+            <TextField autocorrect="false" [(ngModel)]="employee.contact" keyboardType="phone" class="input" required></TextField>
+            <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <StackLayout class="input-field">
+            <Label text="Password" class="label font-weight-bold m-b-5"></Label>
+            <TextField secure="true" [(ngModel)]="employee.password" class="input" required></TextField>
+            <StackLayout class="hr-light"></StackLayout>
+        </StackLayout>
+        <StackLayout class="input-field">
+            <Button text="Save Employee" (tap)="addUser()" class="btn btn-primary"></Button>
+        </StackLayout>
+    </StackLayout>
+</GridLayout>

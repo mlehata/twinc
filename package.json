@@ -1,0 +1,54 @@
+{
+  "nativescript": {
+    "id": "org.nativescript.twinc",
+    "tns-android": {
+      "version": "5.0.0"
+    },
+    "tns-ios": {
+      "version": "5.0.0"
+    }
+  },
+  "description": "NativeScript Application",
+  "license": "SEE LICENSE IN <your-license-filename>",
+  "repository": "<fill-your-repository-here>",
+  "scripts": {
+    "lint": "tslint \"src/**/*.ts\""
+  },
+  "dependencies": {
+    "@angular/animations": "~7.0.0",
+    "@angular/common": "~7.0.0",
+    "@angular/compiler": "~7.0.0",
+    "@angular/core": "~7.0.0",
+    "@angular/forms": "~7.0.0",
+    "@angular/http": "~7.0.0",
+    "@angular/platform-browser": "~7.0.0",
+    "@angular/platform-browser-dynamic": "~7.0.0",
+    "@angular/router": "~7.0.0",
+    "nativescript-angular": "^7.0.3",
+    "nativescript-geolocation": "latest",
+    "nativescript-loading-indicator": "^2.4.0",
+    "nativescript-plugin-firebase": "latest",
+    "nativescript-theme-core": "latest",
+    "nativescript-ui-sidedrawer": "latest",
+    "reflect-metadata": "latest",
+    "rxjs": "^6.3.3",
+    "tns-core-modules": "^5.0.5",
+    "zone.js": "^0.8.26"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "~7.0.0",
+    "@nativescript/schematics": "latest",
+    "@ngtools/webpack": "~7.0.0",
+    "babel-traverse": "6.26.0",
+    "babel-types": "6.26.0",
+    "babylon": "6.18.0",
+    "codelyzer": "latest",
+    "lazy": "1.0.11",
+    "nativescript-dev-sass": "latest",
+    "nativescript-dev-typescript": "^0.7.8",
+    "nativescript-dev-webpack": "^0.18.2",
+    "tslint": "latest",
+    "typescript": "~3.1.1"
+  },
+  "readme": "NativeScript Application"
+}
