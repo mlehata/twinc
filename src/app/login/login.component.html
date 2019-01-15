@@ -1,9 +1,9 @@
-<FlexboxLayout>
-    <GridLayout rows="*,auto" class="first">
-        <StackLayout class="second">
-            <Image src="~/app/images/logo.png"></Image>
+<FlexboxLayout class="m-t-24 p-5">
+    <GridLayout rows="120,auto" class="c-bg-white p-30">
+        <StackLayout row="0" class="c-bg-white">
+            <Image src="~/app/images/logo.png" class="m-20"></Image>
         </StackLayout>
-        <StackLayout row="1" class="form" [class.dark]="!isLoggingIn">
+        <StackLayout row="1" class="form c-bg-white"  [class.dark]="!isLoggingIn">
 
             <TextField hint="Email Address" keyboardType="email" autocorrect="false"
                        autocapitalizationType="none" [(ngModel)]="user.email" class="input input-border"></TextField>

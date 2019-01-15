@@ -6,11 +6,10 @@
     <Label class="action-bar-title" text="Employees"></Label>
 </ActionBar>
 
-<ListView [items]="countries" (itemTap)="onItemTap($event)" class="list-group">
-    <ng-template let-country="item" let-i="index" let-odd="odd" let-even="even">
-        <!-- The item template can only have a single root view container (e.g. GridLayout, StackLayout, etc.)-->
+<ListView [items]="employees" (itemTap)="onItemTap($event)" class="list-group">
+    <ng-template let-employee="item" let-i="index" let-odd="odd" let-even="even">
         <StackLayout orientation="horizontal" class="list-group-item">
-            <Label [text]="country.name"></Label>
+            <Label [(ngModel)]="employee.name"></Label>
         </StackLayout>
     </ng-template>
 </ListView>

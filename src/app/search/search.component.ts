@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { LoadingIndicator } from "nativescript-loading-indicator";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 import { Employee } from "../shared/employee.model";
@@ -13,13 +14,14 @@ import { error } from "tns-core-modules/trace";
 })
 export class SearchComponent implements OnInit {
     employee: Employee;
+    loader = new LoadingIndicator();
 
     constructor() {
         this.employee = new Employee();
     }
 
     ngOnInit(): void {
-        // Init your component properties here.
+        // this.loader.show();
     }
 
     addUser(): void {

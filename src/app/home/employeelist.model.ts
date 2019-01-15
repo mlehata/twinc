@@ -1,3 +1,3 @@
-export class Country {
+export class EmployeeList {
     constructor(public name: string) { }
 }

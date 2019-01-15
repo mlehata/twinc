@@ -1,35 +1,33 @@
 import { ChangeDetectionStrategy, Component, OnInit } from "@angular/core";
+import { LoadingIndicator } from "nativescript-loading-indicator";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
 
 import { ActivatedRoute } from "@angular/router";
 import * as firebase from "nativescript-plugin-firebase";
-import { Country } from "~/app/home/country.model";
+import { EmployeeList } from "~/app/home/employeelist.model";
 
-const employees = ["Lethabo", "Siyabonga", "Amogelang", "Siyabonga", "Bandile", "Blessing",
-    "Lubanzi", "Siphesihle", "Ndlovu"];
+// const employees = ["Lethabo", "Siyabonga", "Amogelang", "Siyabonga", "Bandile", "Blessing",
+//     "Lubanzi", "Siphesihle", "Ndlovu"];
 
 @Component({
     selector: "Home",
     moduleId: module.id,
-    templateUrl: "./home.component.html"
+    templateUrl: "./home.component.html",
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
 
     user: string;
-    countries: Array<Country>;
+    employees: Array<EmployeeList>;
+    loader = new LoadingIndicator();
 
     constructor(private route: ActivatedRoute) {
-        this.countries = [];
+        this.employees = [];
 
-        for (const country of employees) {
-            this.countries.push(new Country(country));
-        }
-
-        // this.route.queryParams.subscribe((params) => {
-        //     console.log(params.email);
-        //     this.user = params.email;
-        // });
+        // for (const employee of employees) {
+        //     this.employees.push(new EmployeeList(employee));
+        // }
     }
 
     onItemTap(args) {
@@ -37,12 +35,17 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // const twinc = firebase.firestore.collection("twinc");
-        // twinc.get().then((querySnapshot) => {
-        //     querySnapshot.forEach((doc) => {
-        //         console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
-        //     });
-        // });
+        this.loader.show();
+        console.log("getting data...");
+        firebase.firestore.collection("cleaners")
+            .get()
+            .then((query) => {
+                query.forEach((doc) => {
+                    console.log(doc.data());
+                    this.employees.push(doc.data().name);
+                    this.loader.hide();
+                });
+            });
     }
 
     onDrawerButtonTap(): void {
