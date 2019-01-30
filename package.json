@@ -27,7 +27,7 @@
     "nativescript-angular": "^7.0.3",
     "nativescript-geolocation": "latest",
     "nativescript-loading-indicator": "^2.4.0",
-    "nativescript-plugin-firebase": "latest",
+    "nativescript-plugin-firebase": "~7.6.0",
     "nativescript-theme-core": "latest",
     "nativescript-ui-sidedrawer": "latest",
     "reflect-metadata": "latest",

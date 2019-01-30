@@ -1,0 +1,31 @@
+FlexboxLayout {
+  justify-content: center;
+  background-size: cover;
+  background-color: #009BDD;
+}
+Image {
+  margin-bottom: 20;
+  height: 70;
+}
+Button, TextField {
+  margin-bottom: 10;
+}
+.btn-primary {
+  background-color: #25274D;
+  margin-left: 0;
+  margin-right: 0;
+}
+TextField {
+  placeholder-color: #C4AFB4;
+  color: black;
+}
+.dark {
+  background-color: #464866;
+}
+.dark TextField {
+  color:  #C4AFB4;
+}
+
+.first {
+  background-color: white;
+}

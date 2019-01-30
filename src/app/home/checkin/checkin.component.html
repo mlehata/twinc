@@ -1,15 +1,15 @@
 <ActionBar class="action-bar">
     <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
     <ActionItem icon="res://navigation/menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
-        ios.position="left">
+                ios.position="left">
     </ActionItem>
-    <Label class="action-bar-title" text="Employees"></Label>
+    <Label class="action-bar-title" [text]="employeeName + ' ' + employeeSurname"></Label>
 </ActionBar>
 
-<ListView id="lvId" [items]="employees" (itemTap)="onItemTap($event)" class="list-group">
+<ListView [items]="employee" (itemTap)="onItemTap($event)" class="list-group">
     <ng-template let-employee="item" let-i="index" let-odd="odd" let-even="even">
         <StackLayout orientation="horizontal" class="list-group-item">
-            <Label [text]="employee.name + ' ' + employee.surname"></Label>
+            <Label [text]="'Latitude: ' + employee.lat + ' , Longitude: ' + employee.long"></Label>
         </StackLayout>
     </ng-template>
 </ListView>
